@@ -1,5 +1,6 @@
 package test;
 
+import atm.transaction.Transaction;
 import banking.Card;
 import org.junit.Assert;
 import org.junit.Before;
@@ -20,26 +21,17 @@ public class DepositTest {
         api = new AtmAPI();
     }
 
-
     @Test
-    public void testDeposit1() {
+    public void testDespositAVL3() {
         Card card = new Card(2);
         int pin = 1234;
-        int account = 1;
+        int accountTo = 1;
+        int value = 25;
+
         try {
-            api.deposit(card, pin, account, 0.0);
-        } catch(Exception e) {
-
+            api.deposit(card, pin, accountTo, value);
+        } catch (Transaction.CardRetained cardRetained) {
+            Assert.fail("Não deveria dar erro com o cartão.");
         }
-    }
-
-    @Test
-    public void testDeposit2() {
-        Card card = new Card(2);
-        int pin = 1234;
-        int account = 1;
-        api.deposit(card, pin, account, 0.01);
-
-        //como saber se depositou se precisa esperar 3 dias?
     }
 }

@@ -24,6 +24,7 @@ hs_err_pid*
 
 # IntellJ
 .idea
+ATMExample.iml
 
 # OS X
 .DS_Store
