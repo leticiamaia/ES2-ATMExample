@@ -26,10 +26,9 @@ public class WithdrawTest {
 
     /**
      * Colocamos 80 reais no ATM quando ligamos.
-     * Caso de teste 1
      */
     @Test
-    public void testValidWithdraw() {
+    public void testTD1() {
         Card card = new Card(2);
         int pin = 1234;
         int account = 1;
@@ -39,10 +38,9 @@ public class WithdrawTest {
 
     /**
      * Colocamos 80 reais no ATM quando ligamos.
-     * Caso de teste 2
      */
     @Test
-    public void testWithdrawMoreThenATMHas() {
+    public void testTD2() {
         Card card = new Card(2);
         int pin = 1234;
         int account = 1;
@@ -56,10 +54,9 @@ public class WithdrawTest {
 
      /*
      * Colocamos 200 reais no ATM quando ligamos.
-     * Caso de teste 3.
      */
     @Test
-    public void testWithdrawMoreThenAccountHas() {
+    public void testTD3() {
         Card card = new Card(2);
         int pin = 1234;
         int account = 1;
@@ -73,10 +70,9 @@ public class WithdrawTest {
 
     /*
     * Colocamos 80 reais no ATM quando ligamos.
-    * Caso de teste 4.
     */
     @Test
-    public void testWithdrawMoreThenAccountAndATMHas() {
+    public void testTD4() {
         Card card = new Card(2);
         int pin = 1234;
         int account = 1;
@@ -91,7 +87,6 @@ public class WithdrawTest {
 
     /*
    * Colocamos 400 reais no ATM quando ligamos.
-   * Caso de teste 5.
    */
     @Test
     public void testWithdrawOverDailyLimit() {
@@ -108,10 +103,9 @@ public class WithdrawTest {
 
     /*
    * Colocamos 300 reais no ATM quando ligamos.
-   * Caso de teste 6.
    */
     @Test
-    public void testWithdrawOverDailyLimitMoreThenAtmHas() {
+    public void testTD5() {
         Card card = new Card(2);
         int pin = 1234;
         int account = 3;
@@ -125,10 +119,9 @@ public class WithdrawTest {
 
     /*
   * Colocamos 6000 reais no ATM quando ligamos.
-  * Caso de teste 7.
   */
     @Test
-    public void testWithdrawOverDailyLimitMoreThenAccountHas() {
+    public void testTD6() {
         Card card = new Card(2);
         int pin = 1234;
         int account = 3;
@@ -142,10 +135,9 @@ public class WithdrawTest {
 
     /*
      * Colocamos 300 reais no ATM quando ligamos.
-     * Caso de teste 8.
      */
     @Test
-    public void test3FailureConditionsToguether() {
+    public void testTD7() {
         Card card = new Card(2);
         int pin = 1234;
         int account = 3;

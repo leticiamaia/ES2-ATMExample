@@ -28,7 +28,7 @@ public class BalanceInquiryTest {
 
 
     @Test
-    public void testBalanceInquiryValidAccount() {
+    public void testTD1() {
         Card card = new Card(2);
         int pin = 1234;
         int account = 1;
@@ -36,7 +36,7 @@ public class BalanceInquiryTest {
     }
 
     @Test
-    public void testBalanceInquiryWrongAccount() {
+    public void testTD2() {
         Card card = new Card(2);
         int pin = 1234;
         int account = 2;
