@@ -7,16 +7,24 @@ import atm.transaction.Transaction;
 import banking.*;
 import simulation.Simulation;
 
+/**
+ * Facade para as funcionalidades do ATM.
+ */
 public class AtmAPI {
 
-    public AtmAPI() {
+    private ATM atm;
+    private Simulation simulation;
 
+    /**
+     * Construtor padrão da API para o ATM.
+     */
+    public AtmAPI() {
+        this.atm = new ATM(42, "Gordon College", "First National Bank of Podunk",
+                null);
+        this.simulation = new Simulation(atm);
     }
 
-    ATM theATM = new ATM(42, "Gordon College", "First National Bank of Podunk",
-            null /* We're not really talking to a bank! */);
-
-    public boolean systemOn() {
+    public boolean isSystemOn() {
         return false;
     }
 
@@ -42,9 +50,6 @@ public class AtmAPI {
 
     public int inquiry(Card card, int pin, int account) {
 
-       /* Balances balances = new Balances();
-        Message message = new Message(Message.INQUIRY, card, pin, 1, account, -1, new Money(0));
-        Status status = theATM.getNetworkToBank().sendMessage(message, balances);*/
         return 0;
     }
 
@@ -58,13 +63,8 @@ public class AtmAPI {
      * @param pin Pin do Cartão.
      * @param accountTo Conta para fazer o depósito.
      * @param money Valor a ser depositado.
-     * @throws Transaction.CardRetained
      */
-    public void deposit(Card card, int pin, int accountTo, Money money) throws Transaction.CardRetained {
-        ATM atm = new ATM(42, "Gordon College", "First National Bank of Podunk",
-                null);
-        Simulation simulation = new Simulation(atm);
-
+    public void deposit(Card card, int pin, int accountTo, Money money) throws Exception {
         atm.SwichOn(4);
 
         Session session = new Session(atm);
@@ -84,11 +84,27 @@ public class AtmAPI {
         deposit.performTransaction();
     }
 
-    public void transfer(Card card, int pin, int accountFrom, int accountTo, double value) {
+    /**
+     * Facade da operação de Transfer.
+     *
+     * @param card Cartão que vai realizar a transferência.
+     * @param pin Pin do Cartão.
+     * @param accountFrom Conta que fará a transferência.
+     * @param accountTo Conta que receberá a transferência.
+     * @param money Valor a ser transferido.
+     */
+    public void transfer(Card card, int pin, int accountFrom, int accountTo, Money money) throws Exception {
     }
 
-    public void withdraw(Card card, int pin, int account, int value) {
-
+    /**
+     * Facade da operação de Withdraw.
+     *
+     * @param card Cartão que vai realizar o saque.
+     * @param pin Pin do Cartão.
+     * @param accountFrom Conta que o dinheiro será sacado.
+     * @param money Valor a ser sacado.
+     */
+    public void withdraw(Card card, int pin, int accountFrom, Money money) throws Exception {
     }
 
 

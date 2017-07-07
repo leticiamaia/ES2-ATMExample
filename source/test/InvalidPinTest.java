@@ -1,16 +1,16 @@
 package test;
 
-import atm.transaction.Transaction;
-import banking.Card;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Created by leticiamaia on 7/6/17.
+ * Classe de testes para testar a funcionalidade InvalidPin.
  */
 public class InvalidPinTest {
-    AtmAPI api;
+
+    private AtmAPI api;
+
     /**
      * Precisa logar e inserir cartão manulalmente antes de qualquer teste.
      * Os números dos testes seguem a ordem da tabela no exercicio.
@@ -19,6 +19,18 @@ public class InvalidPinTest {
     public void setUp() {
         api = new AtmAPI();
     }
+
+    /*
+     * Testes Análise Valor Limite -> AVL{ID}
+     * Testes Partição por Equivalência -> PE{ID}
+     * Testes Tabela de Decisão -> TD{ID}
+     *
+     * Casos de testes iguais de cada técnica foram
+     * concatenados em um mesmo teste.
+     * Exemplo: testDespositAVL1_PE1 é:
+     * Caso de Teste 1 de Análise Valor Limite e
+     * Caso de Teste 1 em Partição por Equivalência.
+     */
 
     @Test
     public void testInvalidPinAVL1_TD1() {

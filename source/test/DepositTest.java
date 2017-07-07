@@ -1,6 +1,5 @@
 package test;
 
-import atm.transaction.Transaction;
 import banking.Card;
 import banking.Money;
 import org.junit.Assert;
@@ -8,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Classe de testes para testar as funcionalidades de Deposit.
+ * Classe de testes para testar a funcionalidade Deposit.
  */
 public class DepositTest {
 
