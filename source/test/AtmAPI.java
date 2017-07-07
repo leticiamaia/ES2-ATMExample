@@ -9,8 +9,37 @@ import simulation.Simulation;
 
 public class AtmAPI {
 
+    public AtmAPI() {
+
+    }
+
     ATM theATM = new ATM(42, "Gordon College", "First National Bank of Podunk",
             null /* We're not really talking to a bank! */);
+
+    public boolean systemOn() {
+        return false;
+    }
+
+    public void swichOn(int bills) {
+
+    }
+
+    public void swichOff() {
+
+    }
+
+    public void insertCard(int cardNumber) {
+
+    }
+
+    public void insertPin(int pin) {
+
+    }
+
+    public int getCard() {
+       return 0;
+    }
+
     public int inquiry(Card card, int pin, int account) {
 
        /* Balances balances = new Balances();
