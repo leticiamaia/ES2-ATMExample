@@ -11,6 +11,9 @@ import org.junit.Test;
  */
 public class DepositTest {
 
+    private static final String CONTA_INVALIDA = "Não deveria ser possível depositar conta inválida";
+    private static final String VALOR_ZERO = "Não deveria ser possível depositar valor 0.";
+    private static final String SEM_EXCEÇÃO = "Não deveria lançar exceção.";
     private AtmAPI api;
     private Card card;
     private int cardPin;
@@ -41,7 +44,7 @@ public class DepositTest {
 
         try {
             api.deposit(card, cardPin, accountTo, money);
-            Assert.fail("Não deveria ser possível depositar valor 0.");
+            Assert.fail(VALOR_ZERO);
         } catch (Exception e) {
 
         }
@@ -55,7 +58,7 @@ public class DepositTest {
         try {
             api.deposit(card, cardPin, accountTo, money);
         } catch (Exception e) {
-            Assert.fail("Não deveria lançar exceção.");
+            Assert.fail(SEM_EXCEÇÃO);
         }
     }
 
@@ -67,7 +70,7 @@ public class DepositTest {
         try {
             api.deposit(card, cardPin, accountTo, money);
         } catch (Exception e) {
-            Assert.fail("Não deveria lançar exceção.");
+            Assert.fail(SEM_EXCEÇÃO);
         }
     }
 
@@ -79,7 +82,7 @@ public class DepositTest {
         try {
             api.deposit(card, cardPin, accountTo, money);
         } catch (Exception e) {
-            Assert.fail("Não deveria lançar exceção.");
+            Assert.fail(SEM_EXCEÇÃO);
         }
     }
 
@@ -90,7 +93,7 @@ public class DepositTest {
 
         try {
             api.deposit(card, cardPin, accountTo, money);
-            Assert.fail("Não deveria ser possível depositar valor 0.");
+            Assert.fail(VALOR_ZERO);
         } catch (Exception e) {
 
         }
@@ -103,7 +106,7 @@ public class DepositTest {
 
         try {
             api.deposit(card, cardPin, accountTo, money);
-            Assert.fail("Não deveria ser possível depositar conta inválida");
+            Assert.fail(CONTA_INVALIDA);
         } catch (Exception e) {
         }
     }
@@ -115,7 +118,7 @@ public class DepositTest {
 
         try {
             api.deposit(card, cardPin, accountTo, money);
-            Assert.fail("Não deveria ser possível depositar conta inválida");
+            Assert.fail(CONTA_INVALIDA);
         } catch (Exception e) {
         }
     }
@@ -127,7 +130,7 @@ public class DepositTest {
 
         try {
             api.deposit(card, cardPin, accountTo, money);
-            Assert.fail("Não deveria ser possível depositar conta inválida");
+            Assert.fail(CONTA_INVALIDA);
         } catch (Exception e) {
         }
     }
