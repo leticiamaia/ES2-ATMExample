@@ -23,6 +23,7 @@ public class TransferTest {
     @Before
     public void setUp() {
         api = new AtmAPI();
+        api.swichOn(10);
         card = new Card(2);
         cardPin = 1234;
     }

@@ -14,6 +14,7 @@ public class DepositTest {
     private static final String CONTA_INVALIDA = "Não deveria ser possível depositar conta inválida";
     private static final String VALOR_ZERO = "Não deveria ser possível depositar valor 0.";
     private static final String SEM_EXCEÇÃO = "Não deveria lançar exceção.";
+
     private AtmAPI api;
     private Card card;
     private int cardPin;
@@ -21,6 +22,7 @@ public class DepositTest {
     @Before
     public void setUp() {
         api = new AtmAPI();
+        api.swichOn(10);
         card = new Card(2);
         cardPin = 1234;
     }

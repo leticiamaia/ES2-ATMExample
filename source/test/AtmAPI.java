@@ -3,7 +3,6 @@ package test;
 import atm.ATM;
 import atm.Session;
 import atm.transaction.Deposit;
-import atm.transaction.Transaction;
 import banking.*;
 import simulation.Simulation;
 

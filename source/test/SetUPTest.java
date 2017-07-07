@@ -8,9 +8,6 @@ import org.junit.Test;
 
 import static com.sun.xml.internal.ws.dump.LoggingDumpTube.Position.Before;
 
-/**
- * Created by leticiamaia on 7/5/17.
- */
 public class SetUPTest {
 
     AtmAPI api;
@@ -30,14 +27,14 @@ public class SetUPTest {
     public void testSwichOnAVL1_TD1() {
         api.swichOn(1);
 
-        Assert.assertTrue(api.systemOn());
+        Assert.assertTrue(api.isSystemOn());
     }
 
     @Test
     public void testSwichOnAVL2_TD2() {
         api.swichOn(0);
 
-        Assert.assertTrue(api.systemOn());
+        Assert.assertTrue(api.isSystemOn());
     }
 
     /**
@@ -57,7 +54,7 @@ public class SetUPTest {
     public void testSwichOnPE1() {
         api.swichOn(20);
 
-        Assert.assertTrue(api.systemOn());
+        Assert.assertTrue(api.isSystemOn());
     }
 
     /**
@@ -80,7 +77,7 @@ public class SetUPTest {
     @Test
     public void testSwichOff() {
         api.swichOff();
-        Assert.assertFalse(api.systemOn());
+        Assert.assertFalse(api.isSystemOn());
     }
 
     /*

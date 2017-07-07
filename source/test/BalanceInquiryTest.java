@@ -24,6 +24,7 @@ public class BalanceInquiryTest {
     @Before
     public void setUp() {
         api = new AtmAPI();
+        api.swichOn(10);
     }
 
 
