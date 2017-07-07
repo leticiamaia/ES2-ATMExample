@@ -19,7 +19,19 @@ public class AtmAPI {
         return 0;
     }
 
-    public void deposit(Card card, int pin, int accountTo, int value) throws Transaction.CardRetained {
+    /**
+     * Facade da operação de Deposit.
+     *
+     * Infelizmente o código não está rodando da forma correta pois o sistema
+     * é muito acoplado à interface.
+     *
+     * @param card Cartão que vai realizar o depósito.
+     * @param pin Pin do Cartão.
+     * @param accountTo Conta para fazer o depósito.
+     * @param money Valor a ser depositado.
+     * @throws Transaction.CardRetained
+     */
+    public void deposit(Card card, int pin, int accountTo, Money money) throws Transaction.CardRetained {
         ATM atm = new ATM(42, "Gordon College", "First National Bank of Podunk",
                 null);
         Simulation simulation = new Simulation(atm);
@@ -31,9 +43,9 @@ public class AtmAPI {
         Deposit deposit = new Deposit(atm, session, card, pin);
 
         Message depositMessage = new Message(1, card, pin,
-                0, -1, accountTo, new Money(value));
+                0, -1, accountTo, money);
 
-        deposit.setAmount(new Money(value));
+        deposit.setAmount(money);
         deposit.setTo(accountTo);
         deposit.setMessage(depositMessage);
         // Workaround to remove coupling with IDE
